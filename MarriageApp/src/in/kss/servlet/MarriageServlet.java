@@ -13,8 +13,9 @@ public class MarriageServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter pw= null;
+		
 		String name=null, gender=null;
-		int age=0;
+		int age=1;
 		//get printwriter
 		pw=res.getWriter();
 		//set response content type
