@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class MarriageServlet extends HttpServlet {
 	@Override
-	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		System.out.println("MarriageServlet.doPost(-,-)");
 		PrintWriter pw= null;
 		
 		String name=null, gender=null;
@@ -55,5 +56,24 @@ public class MarriageServlet extends HttpServlet {
 		pw.close();
 		
 				}//method
+	@Override
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		System.out.println("MarriageServlet.doGet(-,-)");
+		PrintWriter pw=null;
+		//get PrintWriter 
+		pw=res.getWriter();
+		res.setContentType("text/html");
+		//write business logic
+		pw.println("<h1 style= 'color:red;text-align:center'>Date and Time::"+new Date()+"</h1>");
+		
+		//ad hiberlink
+				pw.println("<a href='input.html'><img src='images/home.jpg' width='50' height'50'/></a>");
+		//close stream
+		pw.close();
+		
+		
+		
+		
+		}
 
 }//class
